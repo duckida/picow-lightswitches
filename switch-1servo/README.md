@@ -12,7 +12,7 @@ You will need to add the following to your `configuration.yaml`:
 ```yaml
 command_line:
   - switch:
-      name: Bedroom Lights
+      name: Smart Lights (1 Servo)
       command_on: "/usr/bin/curl -X GET http://switch.ip.address/light/on"
       command_off: "/usr/bin/curl -X GET http://switch.ip.address/light/off"
       command_state: "/usr/bin/curl -X GET http://switch.ip.address/light/status"
