@@ -9,6 +9,9 @@ This project uses a Pico W and a servo to turn a dimmer.
 5. Home Assistant should automatically detect the device.
 
 ### Home Assistant setup:
+This project uses a template light to control the servo
+
+You will need to add the following to your configuration.yaml:
 ```yaml
 light:
   - platform: template
