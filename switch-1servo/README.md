@@ -6,7 +6,7 @@ This project uses a servo to flick on and off a physical light switch via Home A
 - Optionally, a button can be added on GPIO 14 to toggle on and off the lights!
 
 ### Home Assistant integration:
-The light switch is configured as a command line switch in Home Assistant.
+The light switch is configured as a command line switch in Home Assistant. Change the IP to match your Pico W.
 
 You will need to add the following to your `configuration.yaml`:
 ```yaml
