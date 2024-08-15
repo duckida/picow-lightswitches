@@ -46,3 +46,5 @@ light:
                {% set converted_number = (brightness / 255.0 * 200) - 100 %}
                {{ converted_number | round(0) }}
 ```
+
+[![Open your Home Assistant instance and Open the ingress URL of an add-on.](https://my.home-assistant.io/badges/supervisor_ingress.svg)](https://my.home-assistant.io/redirect/supervisor_ingress/?addon=core_configurator)
