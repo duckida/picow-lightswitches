@@ -1,0 +1,57 @@
+esphome:
+  name: dimmer-light-pico
+  friendly_name: Dimmer Light
+
+rp2040:
+  board: rpipicow
+  framework:
+    # Required until https://github.com/platformio/platform-raspberrypi/pull/36 is merged
+    platform_version: https://github.com/maxgerhardt/platform-raspberrypi.git
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "td3gIC430og7noyimoudEBCBZUE0x/op7Nsqsyafoag="
+
+ota:
+  - platform: esphome
+    password: "cc1f2ebe282d3614a101970ac667072b"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot in case wifi connection fails
+  ap:
+    ssid: "Dimmer-Light" # do not change
+    password: "supersecret" # do not change
+    
+  
+servo:
+  - id: my_servo
+    output: pwm_output
+
+# Example output platform
+# On ESP32, use ledc output
+output:
+  - platform: rp2040_pwm
+    id: pwm_output
+    pin: GPIO1
+    frequency: 50 Hz
+
+number:
+  - platform: template
+    name: Servo Control
+    min_value: -100
+    initial_value: 0
+    max_value: 100
+    step: 1
+    optimistic: true
+    set_action:
+      then:
+        - servo.write:
+            id: my_servo
+            level: !lambda 'return x / 100.0;'
