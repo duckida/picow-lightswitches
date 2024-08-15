@@ -1,7 +1,7 @@
 # Light Switch - 2 servos
 This project uses 2 servos to flick on and off a physical light switch via Home Assistant.
 ### Notes:
-- Connect the top servo to GPIOX and the bottom servo to GPIOX
+- Connect the top servo to GPIO0 and the bottom servo to GPIO1
 - Fill in your WiFi network details
 
 ### Home Assistant integration:
