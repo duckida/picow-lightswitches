@@ -90,6 +90,8 @@ async def handle_client(reader, writer):
         servo.duty_u16(max_duty)
         time.sleep(1)
         servo.duty_u16(4000)
+        time.sleep(1)
+        servo.deinit()
         state = 'ON'
         response = '{"POWER": "%s"}' % state
     elif request == '/light/off':
@@ -97,6 +99,8 @@ async def handle_client(reader, writer):
         servo.duty_u16(min_duty)
         time.sleep(1)
         servo.duty_u16(4000)
+        time.sleep(1)
+        servo.deinit()
         state = 'OFF'
         response = '{"POWER": "%s"}' % state
 
