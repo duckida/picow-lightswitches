@@ -1,6 +1,7 @@
 # Light Switch - 1 servo
 This project uses a servo to flick on and off a physical light switch via Home Assistant.
 ### Notes:
+- There are 2 code versions available for this project. We recommend `main-new-version.py` as it is more reliable and has energy-saving features!
 - Connect the servo to GPIO 1
 - Fill in your WiFi network details
 - Optionally, a button can be added on GPIO 14 to toggle on and off the lights!
